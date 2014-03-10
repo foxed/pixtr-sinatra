@@ -1,7 +1,11 @@
 <div id="introduction">Below are a list of galleries that contain images of animals.</div>
-  <h2> <%= @title %> </h2>
-    <ul>
-      <li><a href='galleries/cats'>Cats</a></li>
-      <li><a href='galleries/dogs'>Dogs</a></li>
-      </ul>
+<h2> Galleries </h2>
+<a href='/galleries/new'>New Gallery</a>
+  <ul>
+    <% @galleries.each do |gallery| %>
+      <li>
+        <a href='/galleries/<%= gallery.id %>'><%= gallery.name %></a>
+      </li>
+    <% end %>
+  </ul>
 </div>
